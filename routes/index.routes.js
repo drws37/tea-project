@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const Main = require('../components/Main');
 
-router.get('/', (req, res) => {
-  const html = res.renderComponent(Main,{}, { doctype: true });
-  res.send(html)
-})
+const mainRouter = require('./views/main.routes')
+const profileRouter = require('./views/profile.routes');
+
+router.use('/profile', profileRouter);
+router.use('/', mainRouter);
 
 module.exports = router;
