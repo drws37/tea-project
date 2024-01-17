@@ -5,7 +5,8 @@ module.exports = {
       {
         title: 'Ассам',
         place: 'Индия',
-        coordinates: '28.632853, 77.219725',
+        coordsX: 28.632853,
+        coordsY: 77.219725,
         img: 'some image',
         description: 'some description',
         user_id: 1,
@@ -15,8 +16,9 @@ module.exports = {
       {
         title: 'Цейлонский чай',
         place: 'Шри-Ланка',
+        coordsX: 7.61299,
+        coordsY: 80.704933,
         img: 'some image',
-        coordinates: '7.612990, 80.704933',
         description: 'some description',
         user_id: 1,
         createdAt: new Date(),
@@ -25,7 +27,8 @@ module.exports = {
       {
         title: 'Лахиджан',
         place: 'Иран',
-        coordinates: '35.699706, 51.337425',
+        coordsX: 35.699706,
+        coordsY: 51.337425,
         img: 'some image',
         description: 'some description',
         user_id: 1,
