@@ -1,10 +1,11 @@
 .map {
-  width: 800px;
+  width: 1100px;
   height: 500px;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 50px !important;
-  border: 3px solid black;
+  
+  /* border: 3px solid black; */
 
   border-radius: 7px;
   /* background-color: #333; */
@@ -15,10 +16,8 @@
 }
 
 .icon-marker {
-  position: absolute;
   width: 25px;
   height: 25px;
-
   cursor: pointer;
 
 }
@@ -26,8 +25,9 @@
 .popup {
   position: fixed;
   align-items: center;
+  text-align: center;
 
-  background: #fff;
+  background: aqua;
   box-shadow: 0 0 8px 0 #0003;
   border-radius: 7px;
   border: 2px solid #000;
@@ -35,10 +35,10 @@
 
   top: 50%;
   left: 50%;
-  width: 50%;
-  height: 10%;
+  width: 10%;
+  height: 5%;
 
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   z-index: 1;
 }
 
