@@ -28,7 +28,7 @@ async function initMap() {
   const cent = [59.950453606, 30.3148928];
   const markerEl = document.createElement('img');
   markerEl.className = 'icon-marker';
-  markerEl.src = '/css/maps-and-flags.png';
+  markerEl.src = '/img/maps-and-flags.png';
   const geoObj = new YMapMarker({ coordinates: cent, popup: { content: 'hehe' } }, markerEl);
   map.addChild(geoObj);
 
