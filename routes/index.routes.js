@@ -1,8 +1,10 @@
 const router = require('express').Router();
-const mainRouter = require('./view/main.routes');
-const teaRouter = require('./view/teas.routes');
+const mainRouter = require('./views/main.routes')
+const profileRouter = require('./views/profile.routes');
+const teaRouter = require('./views/teas.routes');
 
 router.use('/', mainRouter);
+router.use('/profile', profileRouter);
 router.use('/', teaRouter);
 
 module.exports = router;

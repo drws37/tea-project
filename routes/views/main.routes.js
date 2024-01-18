@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const Main = require('../../components/Main');
+
+const MainPage = require('../../components/Main');
 
 router.get('/', (req, res) => {
-  const html = res.renderComponent(Main, {}, { doctype: true });
+  const html = res.renderComponent(MainPage, {}, { doctype: true });
   res.send(html);
 });
 
