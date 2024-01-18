@@ -3,6 +3,7 @@ const ReactDOMServer = require('react-dom/server');
 
 function renderComponent(component, props = {}, { doctype } = { doctype: false }) {
   const reactElement = React.createElement(component, {
+    // eslint-disable-next-line max-len
     ...props, // ещё в компонент передаем в качестве пропсов все, что лежит в res.locals (например, res.locals.user)
     ...this.locals, // также передаем все, что лежит в app.locals
     ...this.app.locals,
