@@ -5,7 +5,7 @@
   margin-right: auto !important;
   margin-top: 50px !important;
   border: 3px solid black;
-  
+
   border-radius: 7px;
   /* background-color: #333; */
 }
@@ -18,19 +18,13 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  
-  cursor: pointer;
-  
-}
 
-.ymaps3x0--marker {
-  
+  cursor: pointer;
+
 }
 
 .popup {
-  
-  position: relative;
-
+  position: fixed;
   align-items: center;
 
   background: #fff;
@@ -46,7 +40,7 @@
 
   transform: translate(-50%, -50%);
   z-index: 1;
-} 
+}
 
 
 

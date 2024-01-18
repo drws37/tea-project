@@ -25,6 +25,12 @@ async function initMap() {
   const defaultFeaturesLayer = new YMapDefaultFeaturesLayer();
   // add to map
   map.addChild(defaultFeaturesLayer);
+
+  // Marker
+
+  const res = await fetch('/')
+
+
   const cent = [59.950453606, 30.3148928];
   const markerEl = document.createElement('img');
   markerEl.className = 'icon-marker';
@@ -32,19 +38,18 @@ async function initMap() {
   const geoObj = new YMapMarker({ coordinates: cent, popup: { content: 'hehe' } }, markerEl);
   map.addChild(geoObj);
 
-
   const popup = document.getElementById('popup');
 
   markerEl.addEventListener('mouseover', () => {
     setTimeout(() => {
       popup.style.display = 'block';
     }, 500);
-  })
+  });
   markerEl.addEventListener('mouseleave', () => {
     setTimeout(() => {
       popup.style.display = 'none';
     }, 500);
-  })
+  });
 }
 
 initMap();
