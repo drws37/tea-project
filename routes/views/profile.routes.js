@@ -5,7 +5,6 @@ const { User, Tea } = require('../../db/models');
 
 router.get('/', async (req, res) => {
   try {
-    const users = await User.findAll({})
     const teas = await Tea.findAll();
     const html = res.renderComponent(ProfilePage, {
       title: 'Profile page',
