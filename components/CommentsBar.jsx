@@ -6,7 +6,7 @@ function CommentsBar({ user, tea }) {
     <div>
       {/* <div>{user.img}</div>
       <div>{user.name}</div> */}
-      Jopa negra
+      commentary
     </div>
   );
 }

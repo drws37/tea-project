@@ -10,6 +10,8 @@ function ProfilePage({ user, title, comments }) {
           <img className="profile-pic" src={user.img} alt="" />
           <p>{user.name}</p>
         </div>
+      </div>
+      <div className="container profile-comments">
         <CommentsProfile comments={comments} />
       </div>
     </Layout>

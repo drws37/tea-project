@@ -2,13 +2,16 @@ const React = require('react');
 
 function CommentItem({ text, Tea }) {
   return (
-    <div className="container profile-main">
-      <div className="comments">
-        <div className="comments-header">{Tea.title}</div>
-        <div className="comments-body">{text}</div>
+    <div className="comments">
+      <div className="comments-header">
+        <h4>
+          <a href={`/tea/${Tea.id}`}>{Tea.title}</a>
+        </h4>
+      </div>
+      <div className="comments-body">
+        <p>{text}</p>
       </div>
     </div>
-
   );
 }
 
