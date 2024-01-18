@@ -1,9 +1,17 @@
 const router = require('express').Router();
-const Main = require('../components/Main');
 
-router.get('/', (req, res) => {
-  const html = res.renderComponent(Main,{}, { doctype: true });
-  res.send(html)
-})
+const mainRouter = require('./views/main.routes');
+const authRouter = require('./views/auth.routes');
+const profileRouter = require('./views/profile.routes');
+const teaRouter = require('./views/teas.routes');
+
+const apiAuthRouter = require('./api/api.auth.routes');
+
+router.use('/', mainRouter);
+router.use('/', teaRouter);
+router.use('/profile', profileRouter);
+router.use('/auth', authRouter);
+
+router.use('/api/auth', apiAuthRouter);
 
 module.exports = router;

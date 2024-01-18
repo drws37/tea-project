@@ -1,5 +1,5 @@
-const React = require("react");
-const NavBar = require("./NavBar");
+const React = require('react');
+const NavBar = require('./NavBar');
 
 module.exports = function Layout({ title, children, user }) {
   return (
