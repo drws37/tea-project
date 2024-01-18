@@ -10,6 +10,24 @@
   display: flex;
 }
 
+.container-tea {
+  max-width: 1200px;
+  margin: 0 auto; /* Центрирование по горизонтали */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  margin: 20px;
+  width: 40rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .profile-main {
   width: 100%; /* Занимает всю доступную ширину контейнера */
   display: flex;
@@ -20,8 +38,29 @@
 .profile-comments {
   width: 100%; /* Занимает всю доступную ширину контейнера */
   display: flex;
+  padding: 20px;
   justify-content: space-around;
   flex-direction: column;
+
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tea-comments {
+  width: 40rem; /* Занимает всю доступную ширину контейнера */
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  flex-direction: column;
+
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card {
