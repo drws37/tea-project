@@ -2,7 +2,7 @@ const router = require('express').Router();
 const TeaPage = require('../../components/TeaPage');
 const { Tea } = require('../../db/models');
 
-router.get('/:teaId', async (req, res) => {
+router.get('/tea/:teaId', async (req, res) => {
   try {
     const { teaId } = req.params;
     console.log(req.params);
