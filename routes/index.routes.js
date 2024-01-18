@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const Main = require('../components/Main');
+const mainRouter = require('./view/main.routes');
+const teaRouter = require('./view/teas.routes');
 
-router.get('/', (req, res) => {
-  const html = res.renderComponent(Main,{}, { doctype: true });
-  res.send(html)
-})
+router.use('/', mainRouter);
+router.use('/', teaRouter);
 
 module.exports = router;
