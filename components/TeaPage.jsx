@@ -9,11 +9,12 @@ function TeaPage({ title, tea, user }) {
       <div className="card" style={{ width: '18rem', margin: '20px' }}>
         <img src={tea.img} className="card-img-top" alt=". . ." />
         <div className="card-body">
-          <h5 className="card-title">{tea.name}</h5>
+          <h5 className="card-title">{tea.title}</h5>
+          <h6 className="card-title">{tea.place}</h6>
           <p className="card-text">{tea.description}</p>
         </div>
-        <CommentsBar key={tea.id} tea={tea} />
       </div>
+      <CommentsBar key={tea.id} tea={tea} />
     </Layout>
   );
 }

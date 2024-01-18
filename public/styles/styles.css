@@ -1,17 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto; /* Центрирование по горизонтали */
+  padding: 20px;
+  display: flex;
+}
+
+.profile-main {
+  width: 100%; /* Занимает всю доступную ширину контейнера */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.profile-comments {
+  width: 100%; /* Занимает всю доступную ширину контейнера */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profile-card p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.comments {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none; /* Убираем подчеркивание по умолчанию */
+  color: inherit; /* Используем цвет текста из родительского элемента */
+}
+
+a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+/*^^^GPT^^^*/
+
+.container-fluid img {
+  width: 64px;
+  height: 64px;
+}
+
 .map {
   width: 1100px;
   height: 500px;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 50px !important;
-  
+
   /* border: 3px solid black; */
 
   border-radius: 7px;
   /* background-color: #333; */
 }
 
-[class*="copyrights"] {
+[class*='copyrights'] {
   display: none !important;
 }
 
@@ -19,7 +86,6 @@
   width: 25px;
   height: 25px;
   cursor: pointer;
-
 }
 
 .popup {
@@ -41,8 +107,6 @@
   /* transform: translate(-50%, -50%); */
   z-index: 1;
 }
-
-
 
 .popup-content {
   text-align: center;
