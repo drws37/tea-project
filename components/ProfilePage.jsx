@@ -4,8 +4,7 @@ const NavBar = require('./NavBar');
 
 function ProfilePage({ title, user, teas }) {
   return (
-    <Layout>
-      <NavBar />
+    <Layout user={user}>
       <div className="container profile-main">
         <div className="profile-card">
           <img className="profile-pic" src="https://png.pngtree.com/png-vector/20190301/ourmid/pngtree-vector-administration-icon-png-image_747092.jpg" alt="" />

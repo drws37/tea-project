@@ -79,9 +79,9 @@ router.post('/reg', async (req, res) => {
   }
 });
 
-// router.get('/logout', (req, res) => {
-//   res.clearCookie(configJWT.access.type).clearCookie(configJWT.refresh.type);
-//   res.redirect('/');
-// });
+router.get('/logout', (req, res) => {
+  res.clearCookie(configJWT.access.type).clearCookie(configJWT.refresh.type);
+  res.redirect('/');
+});
 
 module.exports = router;
