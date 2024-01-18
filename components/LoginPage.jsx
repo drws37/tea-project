@@ -15,7 +15,7 @@ function LoginPage({ title }) {
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
             Password
-            <input name="name" type="password" className="form-control" id="exampleInputPassword1" />
+            <input name="password" type="password" className="form-control" id="exampleInputPassword1" />
           </label>
         </div>
         <div className="mb-3 form-check" />
