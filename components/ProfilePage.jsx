@@ -1,19 +1,16 @@
 const React = require('react');
 const Layout = require('./Layout');
-const NavBar = require('./NavBar');
+const CommentsProfile = require('./CommentsProfile');
 
-function ProfilePage({ title, user, teas }) {
+function ProfilePage({ user, title, comments }) {
   return (
-    <Layout user={user}>
+    <Layout title={title} user={user}>
       <div className="container profile-main">
         <div className="profile-card">
-          <img className="profile-pic" src="https://png.pngtree.com/png-vector/20190301/ourmid/pngtree-vector-administration-icon-png-image_747092.jpg" alt="" />
-          <p>Name Name</p>
+          <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnGZWTF4dIu8uBZzgjwWRKJJ4DisphDHEwT2KhLNxBAA&s" alt="" />
+          <p>{user.name}</p>
         </div>
-        <div className="comments">
-          <div className="comments-header">{teas[0].title}</div>
-          <div className="comments-body">Здесь будет комментарий</div>
-        </div>
+        <CommentsProfile comments={comments} />
       </div>
     </Layout>
   );
