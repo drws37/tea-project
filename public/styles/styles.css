@@ -207,3 +207,23 @@ a:hover {
   height: 500px;
   /* background-color: #333; */
 }
+
+.loga {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: max-content;
+}
+
+.logapage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.mid{
+  margin-left: 40px;
+}
