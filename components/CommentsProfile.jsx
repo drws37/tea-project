@@ -4,9 +4,11 @@ const CommentItem = require('./CommentItem');
 function CommentsProfile({ comments }) {
   return (
     <>
-      {comments.map((comment) => (<CommentItem key={comment.id} text={comment.text} Tea={comment.Tea} />))}
+      <h3>Мои комментарии:</h3>
+      {comments.map((comment) => (
+        <CommentItem key={comment.id} text={comment.text} Tea={comment.Tea} />
+      ))}
     </>
-
   );
 }
 

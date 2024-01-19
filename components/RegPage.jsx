@@ -34,7 +34,7 @@ function RegPage({ title }) {
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
             Image
-            <input name="img" type="text" className="form-control" id="exampleInputPassword3" />
+            <input name="img" type="file" className="form-control" id="exampleInputPassword3" />
           </label>
         </div>
         <div className="mb-3 form-check" />

@@ -4,6 +4,7 @@ function NavBar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
+        <img src="/img/teapot.png" alt="" />
         <h1 className="navbar-brand" href="#">
           ChAi
         </h1>
@@ -32,7 +33,7 @@ function NavBar({ user }) {
                     {user.name}
                   </a>
                 </li>
-                <a className="nav-link ml-auto" href="/api/auth/logout" style={{ width: '18rem' }}>
+                <a className="nav-link" href="/api/auth/logout">
                   Logout
                 </a>
               </>
@@ -49,7 +50,6 @@ function NavBar({ user }) {
                   </a>
                 </li>
               </>
-
             )}
           </ul>
         </div>

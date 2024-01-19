@@ -12,9 +12,11 @@ function ProfilePage({
     <Layout title={title} user={user}>
       <div className="container profile-main">
         <div className="profile-card">
-          <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnGZWTF4dIu8uBZzgjwWRKJJ4DisphDHEwT2KhLNxBAA&s" alt="" />
+          <img className="profile-pic" src={user.img} alt="" />
           <p>{user.name}</p>
         </div>
+      </div>
+      <div className="container profile-comments">
         <CommentsProfile comments={comments} />
       </div>
       { (user.isAdmin) && (
