@@ -1,8 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 const CommentsBar = require('./CommentsBar');
+const CommentsList = require('./CommentsList');
 
-function TeaPage({ title, tea, user }) {
+function TeaPage({ title, tea, user, comments, users }) {
   return (
     <Layout user={user} title={title} tea={tea}>
       <div className="container-tea">
@@ -17,6 +18,7 @@ function TeaPage({ title, tea, user }) {
         <div className="tea-comments">
           <CommentsBar key={tea.id} tea={tea} />
         </div>
+        <CommentsList comments={comments} users={users} />
       </div>
     </Layout>
   );

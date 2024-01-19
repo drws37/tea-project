@@ -35,7 +35,6 @@ if (regForm) {
     formData.append('password', password.value);
     formData.append('rpassword', rpassword.value);
 
-    console.log(name, password, rpassword, img);
     const res = await fetch('/api/auth/reg', {
       method: 'post',
       body: formData,
