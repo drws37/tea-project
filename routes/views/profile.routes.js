@@ -8,12 +8,14 @@ router.get('/', async (req, res) => {
       where: { user_id: res.locals.user.id },
       include: Tea,
     });
-    console.log(comments);
+    const teas = await Tea.findAll();
+    console.log(teas);
     const html = res.renderComponent(
       ProfilePage,
       {
         title: 'Profile page',
         comments,
+        teas,
       },
       { doctype: true }
     );

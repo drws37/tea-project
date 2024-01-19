@@ -1,8 +1,13 @@
 const React = require('react');
 const Layout = require('./Layout');
 const CommentsProfile = require('./CommentsProfile');
+const AddTeaForm = require('./AddForm');
+const TeasListPage = require('./TeasListPage');
 
-function ProfilePage({ user, title, comments }) {
+function ProfilePage({
+  user, title, comments, teas,
+}) {
+  // console.log(user, 11111111111111);
   return (
     <Layout title={title} user={user}>
       <div className="container profile-main">
@@ -12,6 +17,13 @@ function ProfilePage({ user, title, comments }) {
         </div>
         <CommentsProfile comments={comments} />
       </div>
+      { (user.isAdmin) && (
+        <>
+          <AddTeaForm />
+          <TeasListPage user={user} teas={teas} />
+        </>
+
+      )}
     </Layout>
   );
 }
