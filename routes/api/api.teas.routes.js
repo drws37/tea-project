@@ -1,20 +1,36 @@
 const router = require('express').Router();
+const multer = require('multer');
 const TeaItem = require('../../components/TeaItem');
 const { Tea } = require('../../db/models');
 
-router.post('/', async (req, res) => {
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    cb(null, 'public/img');
+  },
+  filename(req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
+router.post('/', upload.single('img'), async (req, res) => {
   try {
     // console.log(req.body);
-    const {
-      title, place, coordsX, coordsY, img, description,
-    } = req.body;
-    console.log(res.locals.user.id, 33333333333333333333333);
+    const { title, place, coordsX, coordsY, description } = req.body;
+
+    const newFileUrl = `/img/${req.file.originalname}`;
+
     const tea = await Tea.create({
-      title, place, coordsX, coordsY, img, description, user_id: res.locals.user.id,
+      title,
+      place,
+      coordsX,
+      coordsY,
+      img: newFileUrl,
+      description,
+      user_id: res.locals.user.id,
     });
-    console.log(tea);
     const html = res.renderComponent(TeaItem, { tea }, { doctype: false });
-    console.log(html);
     res.json({
       message: 'success',
       html,
