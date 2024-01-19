@@ -1,13 +1,14 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function CommentsBar({ user, tea }) {
+function CommentsBar({ user, tea, comment }) {
   return (
-    <div>
-      {/* <div>{user.img}</div>
-      <div>{user.name}</div> */}
-      Jopa negra
-    </div>
+    <form id={tea.id} className="add-comments">
+      <label>Ваш комментарий:</label>
+      <input name="comment" type="text" />
+      <button>Отправить</button>
+      <div className="comments-container" />
+    </form>
   );
 }
 

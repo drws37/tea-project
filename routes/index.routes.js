@@ -6,11 +6,13 @@ const profileRouter = require('./views/profile.routes');
 const teaRouter = require('./views/teas.routes');
 
 const apiAuthRouter = require('./api/api.auth.routes');
+const apiCommentsRouter = require('./api/api.comments.routes');
 
 router.use('/', mainRouter);
 router.use('/', teaRouter);
 router.use('/profile', profileRouter);
 router.use('/auth', authRouter);
+router.use('/api/comments', apiCommentsRouter);
 
 router.use('/api/auth', apiAuthRouter);
 
