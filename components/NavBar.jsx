@@ -4,6 +4,7 @@ function NavBar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
+        
         <img src="/img/teapot.png" alt="" />
         <h1 className="navbar-brand" href="#">
           ChAi

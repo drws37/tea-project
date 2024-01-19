@@ -16,9 +16,12 @@ function ProfilePage({
           <p>{user.name}</p>
         </div>
       </div>
-      <div className="container profile-comments">
-        <CommentsProfile comments={comments} />
-      </div>
+      { (comments.length) && (
+        <div className="container profile-comments">
+          <CommentsProfile comments={comments} />
+        </div>
+
+      )}
       { (user.isAdmin) && (
         <>
           <AddTeaForm />
