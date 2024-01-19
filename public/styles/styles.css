@@ -1,39 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto; /* Центрирование по горизонтали */
+  padding: 20px;
+  display: flex;
+}
+
+.container-tea {
+  max-width: 1200px;
+  margin: 0 auto; /* Центрирование по горизонтали */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  margin: 20px;
+  width: 40rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-main {
+  width: 100%; /* Занимает всю доступную ширину контейнера */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.profile-comments {
+  width: 100%; /* Занимает всю доступную ширину контейнера */
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  flex-direction: column;
+
+  /* background-color: #ffffff;
+  border: 1px solid #ddd; */
+  padding: 20px;
+  text-align: center;
+}
+
+.tea-comments {
+  width: 40rem; /* Занимает всю доступную ширину контейнера */
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  flex-direction: column;
+
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.teas-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tea-card{
+  flex: 1 1 auto;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profile-card p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.comments {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 10px 0;
+  text-align: left;
+}
+
+a {
+  text-decoration: none; /* Убираем подчеркивание по умолчанию */
+  color: inherit; /* Используем цвет текста из родительского элемента */
+}
+
+a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+/*^^^GPT^^^*/
+
+.container-fluid img {
+  width: 64px;
+  height: 64px;
+}
+
 .map {
-  width: 800px;
+  width: 1100px;
   height: 500px;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 50px !important;
-  border: 3px solid black;
-  
+
+  /* border: 3px solid black; */
+
   border-radius: 7px;
   /* background-color: #333; */
 }
 
-[class*="copyrights"] {
+[class*='copyrights'] {
   display: none !important;
 }
 
 .icon-marker {
-  position: absolute;
   width: 25px;
   height: 25px;
-  
   cursor: pointer;
-  
-}
-
-.ymaps3x0--marker {
-  
 }
 
 .popup {
-  
-  position: relative;
-
+  position: fixed;
   align-items: center;
+  text-align: center;
 
-  background: #fff;
+  background: aqua;
   box-shadow: 0 0 8px 0 #0003;
   border-radius: 7px;
   border: 2px solid #000;
@@ -41,14 +149,12 @@
 
   top: 50%;
   left: 50%;
-  width: 50%;
-  height: 10%;
+  width: 10%;
+  height: 5%;
 
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   z-index: 1;
-} 
-
-
+}
 
 .popup-content {
   text-align: center;
@@ -67,4 +173,11 @@
   width: 500px;
   height: 500px;
   /* background-color: #333; */
+}
+
+.AB{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

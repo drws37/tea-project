@@ -1,21 +1,34 @@
 const React = require('react');
 const Layout = require('./Layout');
-const NavBar = require('./NavBar');
+const CommentsProfile = require('./CommentsProfile');
+const AddTeaForm = require('./AddForm');
+const TeasListPage = require('./TeasListPage');
 
-function ProfilePage({ title, user, teas }) {
+function ProfilePage({
+  user, title, comments, teas,
+}) {
+  // console.log(user, 11111111111111);
   return (
-    <Layout>
-      <NavBar />
+    <Layout title={title} user={user}>
       <div className="container profile-main">
         <div className="profile-card">
-          <img className="profile-pic" src="https://png.pngtree.com/png-vector/20190301/ourmid/pngtree-vector-administration-icon-png-image_747092.jpg" alt="" />
-          <p>Name Name</p>
-        </div>
-        <div className="comments">
-          <div className="comments-header">{teas[0].title}</div>
-          <div className="comments-body">Здесь будет комментарий</div>
+          <img className="profile-pic" src={user.img} alt="" />
+          <p>{user.name}</p>
         </div>
       </div>
+      { (comments.length) && (
+        <div className="container profile-comments">
+          <CommentsProfile comments={comments} />
+        </div>
+
+      )}
+      { (user.isAdmin) && (
+        <>
+          <AddTeaForm />
+          <TeasListPage user={user} teas={teas} />
+        </>
+
+      )}
     </Layout>
   );
 }

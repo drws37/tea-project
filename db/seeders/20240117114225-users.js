@@ -7,7 +7,7 @@ module.exports = {
       {
         name: 'Иван',
         password: await bcrypt.hash('123', 10),
-        img: 'image',
+        img: '/img/baseUser.png',
         isAdmin: true,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -15,7 +15,7 @@ module.exports = {
       {
         name: 'Максим',
         password: await bcrypt.hash('456', 10),
-        img: 'image',
+        img: '/img/baseUser.png',
         isAdmin: false,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -23,7 +23,15 @@ module.exports = {
       {
         name: 'Александр',
         password: await bcrypt.hash('789', 10),
-        img: 'image',
+        img: '/img/baseUser.png',
+        isAdmin: false,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: 'Дмитрий',
+        password: await bcrypt.hash('123', 10),
+        img: '/img/dima.png',
         isAdmin: false,
         createdAt: new Date(),
         updatedAt: new Date(),

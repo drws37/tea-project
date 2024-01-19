@@ -1,8 +1,20 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+const multer = require('multer');
 const { User } = require('../../db/models');
 const generateTokens = require('../../Utils/authUtils');
 const configJWT = require('../../middleware/configJWT');
+
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    cb(null, 'public/img');
+  },
+  filename(req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage });
 
 router.post('/login', async (req, res) => {
   let user;
@@ -38,12 +50,12 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/reg', async (req, res) => {
+router.post('/reg', upload.single('img'), async (req, res) => {
   let user;
   try {
-    const {
-      name, password, rpassword, img,
-    } = req.body;
+    const { name, password, rpassword, img } = req.body;
+
+    const newFileUrl = `/img/${req.file.originalname}`;
     // console.log(req.body);
     if (password !== rpassword) {
       res.json({ message: 'Пароли не совпадают' });
@@ -57,11 +69,16 @@ router.post('/reg', async (req, res) => {
     }
     const hash = await bcrypt.hash(password, 10);
     user = await User.create({
-      name, password: hash, img, isAdmin: false,
+      name,
+      password: hash,
+      img: newFileUrl,
+      isAdmin: false,
     });
     const { accessToken, refreshToken } = generateTokens({
       user: {
-        id: user.id, name: user.name, img: user.img,
+        id: user.id,
+        name: user.name,
+        img: user.img,
       },
     });
 
@@ -79,9 +96,9 @@ router.post('/reg', async (req, res) => {
   }
 });
 
-// router.get('/logout', (req, res) => {
-//   res.clearCookie(configJWT.access.type).clearCookie(configJWT.refresh.type);
-//   res.redirect('/');
-// });
+router.get('/logout', (req, res) => {
+  res.clearCookie(configJWT.access.type).clearCookie(configJWT.refresh.type);
+  res.redirect('/');
+});
 
 module.exports = router;

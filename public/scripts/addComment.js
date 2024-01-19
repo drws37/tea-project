@@ -1,26 +1,22 @@
-const addComment = document.querySelector('.add-comments');
+const formComment = document.querySelector('.newComment');
 
-if (addComment) {
-  addComment.addEventListener('submit', async (e) => {
+if (formComment) {
+  formComment.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const { comment } = e.target;
-    const res = await fetch(`/api/comments/${e.target.id}`, {
+    const { id, comment } = e.target;
+    console.log(id, comment);
+    const res = await fetch('/api/comment', {
       method: 'post',
-      headers: {
-        'Content-type': 'application/json',
-      },
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({
+        id,
         comment: comment.value,
       }),
     });
     const data = await res.json();
     if (data.message === 'success') {
-      document
-        .querySelector('.comments-container')
-        .insertAdjacentHTML('beforeend', data.html);
-      e.target.removeEventListener();
-    } else {
-      alert(data.message);
+       document.querySelector('.commentsList').remove()
+      document.querySelector('.container-tea').insertAdjacentHTML('beforeend', data.html);
     }
   });
 }

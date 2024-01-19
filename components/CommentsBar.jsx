@@ -3,12 +3,20 @@ const Layout = require('./Layout');
 
 function CommentsBar({ user, tea, comment }) {
   return (
-    <form id={tea.id} className="add-comments">
-      <label>Ваш комментарий:</label>
-      <input name="comment" type="text" />
-      <button>Отправить</button>
-      <div className="comments-container" />
-    </form>
+    <div className="mb-3">
+      <form id={tea.id} className='newComment'>
+        <h5>Оставить комментарий</h5>
+        <input
+          name="comment"
+          type="text"
+          className="form-control"
+          aria-describedby="emailHelp"
+        />
+        <button type="submit" className="btn btn-dark">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
 

@@ -3,8 +3,9 @@ const Layout = require('./Layout');
 const CommentsBar = require('./CommentsBar');
 const CommentsSection = require('./CommentsSection');
 const { Comment } = require('../db/models');
+const CommentsList = require('./CommentsList');
 
-function TeaPage({ title, tea, user }) {
+function TeaPage({ title, tea, user, comments, users }) {
   return (
     // <Layout user={user} title={title} tea={tea}>
     //   <h1>Tea page</h1>
@@ -32,21 +33,19 @@ function TeaPage({ title, tea, user }) {
     //   </div>
     // </Layout>
     <Layout user={user} title={title} tea={tea}>
-      <h1>{tea.title} (чай)</h1>
-      <hr />
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div className="img-card">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Assam_black_tea.jpg/274px-Assam_black_tea.jpg"
-            alt=". . ."
-          />
-          <div>
-            Вид: {tea.title} Происхождение: {tea.place}
+      <div className="container-tea">
+        <div className="card">
+          <img src={tea.img} className="card-img-top" alt=". . ." />
+          <div className="card-body">
+            <h5 className="card-title">{tea.title}</h5>
+            <h6 className="card-title">{tea.place}</h6>
+            <p className="card-text">{tea.description}</p>
           </div>
-          <p>{tea.description}</p>
         </div>
-        <CommentsBar tea={tea} />
-        <CommentsSection comment={comment} />
+        <div className="tea-comments">
+          <CommentsBar key={tea.id} tea={tea} />
+        </div>
+        <CommentsList comments={comments} users={users} />
       </div>
     </Layout>
   );

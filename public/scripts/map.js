@@ -15,7 +15,7 @@ async function initMap() {
         center: [59.950453606, 30.3148928],
 
         // Уровень масштабирования
-        zoom: 1,
+        zoom: 2,
       },
     },
   );
@@ -25,29 +25,42 @@ async function initMap() {
   const defaultFeaturesLayer = new YMapDefaultFeaturesLayer();
   // add to map
   map.addChild(defaultFeaturesLayer);
-  const cent = [59.950453606, 30.3148928];
-  const markerEl = document.createElement('img');
-  markerEl.className = 'icon-marker';
-  markerEl.src = '/img/maps-and-flags.png';
-  const geoObj = new YMapMarker({ coordinates: cent, popup: { content: 'hehe' } }, markerEl);
-  map.addChild(geoObj);
 
+  // Marker
+
+  const res = await fetch('/markers');
+  const data = await res.json();
+  console.log(data.teas);
 
   const popup = document.getElementById('popup');
+  data.teas.map((tea) => {
+    const cent = [tea.coordsY, tea.coordsX];
+    const markerEl = document.createElement('img');
+    markerEl.className = 'icon-marker';
+    markerEl.src = '/img/maps-and-flags.png';
+    map.addChild(new YMapMarker({ coordinates: cent, popup: { content: 'hehe' } }, markerEl));
 
-  markerEl.addEventListener('mouseover', () => {
-    setTimeout(() => {
-      popup.style.display = 'block';
-    }, 500);
-  })
-  markerEl.addEventListener('mouseleave', () => {
-    setTimeout(() => {
-      popup.style.display = 'none';
-    }, 500);
-  })
+    markerEl.addEventListener('click', () => {
+      window.location.assign(`/tea/${tea.id}`);
+    });
+    markerEl.addEventListener('mouseover', () => {
+      setTimeout(() => {
+        popup.innerText = tea.title;
+        popup.style.display = 'block';
+        // const markerRect = markerEl.getBoundingClientRect();
+        // console.log(markerRect.bottom);
+        // popup.style.bottom = `${markerRect.top}px`;
+      }, 100);
+    });
+    markerEl.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 100);
+    });
+  });
 }
 
-initMap();
+if (document.getElementById('map')) initMap();
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   const openPopupBtn = document.querySelector('.ymaps3x0--marker');
