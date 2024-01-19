@@ -132,15 +132,15 @@ a:hover {
   align-items: center;
   text-align: center;
 
-  background: aqua;
+  background: white;
   box-shadow: 0 0 8px 0 #0003;
   border-radius: 7px;
   border: 2px solid #000;
   display: none;
 
-  top: 50%;
-  left: 50%;
-  width: 10%;
+  top: 20%;
+  left: 43%;
+  width: 15%;
   height: 5%;
 
   /* transform: translate(-50%, -50%); */
