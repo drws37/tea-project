@@ -27,7 +27,7 @@ async function initMap() {
   map.addChild(defaultFeaturesLayer);
 
   // Marker
-  
+
   const res = await fetch('/markers');
   const data = await res.json();
   console.log(data.teas);
@@ -60,7 +60,7 @@ async function initMap() {
   });
 }
 
-initMap();
+if (document.getElementById('map')) initMap();
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   const openPopupBtn = document.querySelector('.ymaps3x0--marker');
