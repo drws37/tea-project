@@ -180,9 +180,9 @@ a:hover {
   border: 2px solid #000;
   display: none;
 
-  top: 50%;
-  left: 50%;
-  width: 10%;
+  top: 20%;
+  left: 43%;
+  width: 15%;
   height: 5%;
 
   /* transform: translate(-50%, -50%); */
