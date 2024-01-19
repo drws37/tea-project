@@ -63,6 +63,15 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.teas-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tea-card{
+  flex: 1 1 auto;
+}
+
 .profile-card {
   background-color: #ffffff;
   border: 1px solid #ddd;

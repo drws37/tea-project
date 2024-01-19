@@ -42,7 +42,7 @@ function AddTeaForm() {
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
             Image
-            <input name="img" type="text" className="form-control" id="exampleInputPassword1" />
+            <input name="img" type="file" className="form-control" id="exampleInputPassword1" />
           </label>
         </div>
         <div className="mb-3">
