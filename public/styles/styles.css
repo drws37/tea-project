@@ -54,12 +54,45 @@
   padding: 20px;
   justify-content: space-around;
   flex-direction: column;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.commentInList {
+  border-bottom: 1px solid #333;
+  margin-bottom: 20px;
+}
+
+.comment-text{
+  font-style: italic;
+  margin: 0 0 10px 10px;
+}
+
+.commentsList {
+  width: 40rem; /* Занимает всю доступную ширину контейнера */
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  flex-direction: column;
 
   background-color: #ffffff;
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  text-align: left;
+}
+.addComentForm {
+  margin: 10px;
+}
+.comment-date {
+  font-size:12px ;
+  margin-bottom: 10px
 }
 
 .teas-container {
@@ -106,7 +139,7 @@ a {
 a:hover {
   text-decoration: underline; /* Подчеркивание при наведении */
 }
-/*^^^GPT^^^*/
+
 
 .container-fluid img {
   width: 64px;
@@ -141,7 +174,7 @@ a:hover {
   align-items: center;
   text-align: center;
 
-  background: aqua;
+  background: white;
   box-shadow: 0 0 8px 0 #0003;
   border-radius: 7px;
   border: 2px solid #000;

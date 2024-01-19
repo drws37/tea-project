@@ -6,11 +6,11 @@ function CommentsList({ comments, users }) {
       {(comments.map((com) => {
         const [user] = users.filter((el) => el.id === com.user_id);
         return (
-          <>
+          <div className="commentInList">
             <h5>{user.name}</h5>
-            <div>{com.text}</div>
-            <div>{com.createdAt.toString().slice(0, 25)}</div>
-          </>
+            <div className="comment-text">{com.text}</div>
+            <div className="comment-date">{com.createdAt.toString().slice(0, 25)}</div>
+          </div>
         );
       }).reverse())}
     </div>
