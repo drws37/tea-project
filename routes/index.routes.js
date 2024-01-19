@@ -7,6 +7,7 @@ const teaRouter = require('./views/teas.routes');
 
 const apiMarkersRouter = require('./api/api.markers.routes');
 const apiAuthRouter = require('./api/api.auth.routes');
+const apiTeasRouter = require('./api/api.teas.routes');
 
 router.use('/markers', apiMarkersRouter);
 router.use('/', mainRouter);
@@ -15,5 +16,6 @@ router.use('/profile', profileRouter);
 router.use('/auth', authRouter);
 
 router.use('/api/auth', apiAuthRouter);
+router.use('/api/teas', apiTeasRouter);
 
 module.exports = router;

@@ -22,14 +22,14 @@ function NavBar({ user }) {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <a className="nav-link ml-auto" aria-current="page" href="/">
                 Home
               </a>
             </li>
             {user ? (
               <>
                 <li className="nav-item">
-                  <a className="nav-link active" href="/profile">
+                  <a className="nav-link ml-auto" href="/profile">
                     {user.name}
                   </a>
                 </li>
