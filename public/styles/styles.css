@@ -208,6 +208,12 @@ a:hover {
   /* background-color: #333; */
 }
 
+.AB{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 .loga {
   display: flex;
   justify-content: center;
@@ -226,4 +232,5 @@ a:hover {
 
 .mid{
   margin-left: 40px;
+
 }

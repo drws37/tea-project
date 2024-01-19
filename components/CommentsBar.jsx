@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function CommentsBar({ user, tea }) {
+function CommentsBar({ user, tea, comment }) {
   return (
     <div className="mb-3">
       <form id={tea.id} className="newComment">
